@@ -17,7 +17,7 @@ func TestHello(t *testing.T) {
 }
 
 func assertCorrectMessage(t testing.TB, got, want string) { // testing is for both tests and benchmarks
-	t.Helper() // original function that called this will be reporterd
+	t.Helper() // original function that called this will be reported
 	if got != want {
 		t.Errorf("got %q want %q", got, want)
 	}
