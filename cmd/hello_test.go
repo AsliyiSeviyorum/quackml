@@ -3,10 +3,22 @@ package main
 import "testing"
 
 func TestHello(t *testing.T) {
-	got := Hello("Ahmet")
-	want := "hi, Ahmet"
+	t.Run("Saying hello with a name specified", func(t *testing.T) {
+		got := Hello("Ahmet")
+		want := "hi, Ahmet"
+		assertCorrectMessage(t, got, want)
+	})
 
+	t.Run("Saying hello without a name specified", func(t *testing.T) {
+		got := Hello("")
+		want := "hi, SUPRA"
+		assertCorrectMessage(t, got, want)
+	})
+}
+
+func assertCorrectMessage(t testing.TB, got, want string) { // testing is for both tests and benchmarks
+	t.Helper() // original function that called this will be reporterd
 	if got != want {
-		t.Errorf("Expected: %q,  received: %q", want, got)
+		t.Errorf("got %q want %q", got, want)
 	}
 }
