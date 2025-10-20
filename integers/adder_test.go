@@ -17,5 +17,5 @@ func TestAdder(t *testing.T) {
 func ExampleAdd() {
 	sum := Add(3, 3)
 	fmt.Println(sum)
-	// Output: 66
+	// Output: 6
 }
